@@ -29,11 +29,12 @@ export const metadata: Metadata = {
     authors: [{ name: "Antonii Shymchyts", url: "https://github.com/nominori-dev" }],
     creator: "nominori-dev",
     publisher: "nominori-dev",
+    metadataBase: new URL("https://me-snowy-zeta-34.vercel.app"),
     openGraph: {
         title: "nominori-dev | Java & Next.js Developer",
         description:
             "Portfolio of Antonii Shymchyts — backend and frontend projects with Java, Spring Boot, and Next.js.",
-        url: "https://nominori.dev",
+        url: "https://me-snowy-zeta-34.vercel.app",
         siteName: "nominori-dev Portfolio",
         images: [
             {
