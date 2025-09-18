@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         siteName: "nominori-dev Portfolio",
         images: [
             {
-                url: "/og-banner.png",
+                url: "/og_banner.png",
                 width: 1200,
                 height: 630,
                 alt: "nominori-dev portfolio preview",
