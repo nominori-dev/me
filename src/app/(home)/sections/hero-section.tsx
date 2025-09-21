@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import {BackgroundBeams} from "@/components/ui/background-beams";
 
 export const HeroSection = () => {
     return (
-        <section id={"about"} className={"flex space-x-10 pt-10"}>
+        <section id={"about"} className={"flex space-x-10 pt-10 justify-center md:justify-normal"}>
             <div className="flex flex-col basis-2/4 space-y-10">
                 <h2 className="text-3xl md:text-5xl leading-tight font-serif font-semibold tracking-wide" >
                     <span className="block text-[1.05em] opacity-70 uppercase tracking-widest">Antonii Shymchyts</span>
@@ -26,9 +27,10 @@ export const HeroSection = () => {
                 </div>
             </div>
 
-            <div className="basis-2/4 w-full h-[360px] rounded-2xl overflow-hidden bg-gradient-to-b from-black/40 to-black/80 shadow-2xl flex items-center justify-center">
+            <div className="hidden md:flex basis-2/4 w-full h-[360px] rounded-2xl overflow-hidden bg-gradient-to-b from-black/40 to-black/80 shadow-2xl flex items-center justify-center">
                 <img src="/goofy.jpg" alt="Hero Graphic" className="opacity-90" />
             </div>
+            <BackgroundBeams/>
         </section>
     )
 }
