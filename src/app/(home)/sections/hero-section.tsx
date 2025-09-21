@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
-import {BackgroundBeams} from "@/components/ui/background-beams";
 
 export const HeroSection = () => {
     return (
