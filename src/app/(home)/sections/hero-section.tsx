@@ -29,7 +29,6 @@ export const HeroSection = () => {
             <div className="hidden md:flex basis-2/4 w-full h-[360px] rounded-2xl overflow-hidden bg-gradient-to-b from-black/40 to-black/80 shadow-2xl flex items-center justify-center">
                 <img src="/goofy.jpg" alt="Hero Graphic" className="opacity-90" />
             </div>
-            <BackgroundBeams/>
         </section>
     )
 }
