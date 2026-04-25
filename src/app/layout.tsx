@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import "@/app/(home)/globals.css";
 import {ThemeProvider} from "@/components/theme-provider";
-import { Roboto } from 'next/font/google'
+import { Roboto, Geist_Mono } from 'next/font/google'
 
 const roboto = Roboto({
-    weight: '500',
     subsets: ['latin'],
+    weight: ['400', '500', '700'],
+    variable: '--font-roboto',
+})
+
+const geistMono = Geist_Mono({
+    subsets: ['latin'],
+    variable: '--font-geist-mono',
 })
 
 export const metadata: Metadata = {
@@ -61,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${roboto.className} antialiased max-w-[1440px] mx-auto`}
+        className={`${roboto.variable} ${geistMono.variable} font-sans antialiased max-w-[1440px] mx-auto`}
       >
         <ThemeProvider attribute={"class"} defaultTheme={"light"} enableSystem disableTransitionOnChange>
             {children}
