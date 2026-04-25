@@ -1,29 +1,40 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const navLinks = [
+    { label: "projects", href: "/projects" },
+    { label: "github", href: "https://github.com/nominori-dev" },
+    { label: "linkedin", href: "https://www.linkedin.com/in/nominori/" },
+];
+
 export const Header = () => {
     return (
-        <header className={"z-10 py-12 px-2 flex flex-row justify-between items-center max-w-[90%] mx-auto"}>
-            <div className="relative  flex flex-col max-w-6xl">
-                <div className="flex items-center gap-4">
-                    <h1 className="w-50 h-auto font-bold text-xl">
-                        Antonii Shymchyts
-                    </h1>
-                </div>
-                <nav className="space-x-2 opacity-80 flex">
-                    <Link className="hover:underline" href="mailto:nominori999@gmail.com">nominori999@gmail.com</Link>
-                </nav>
-                <nav className="space-x-2 opacity-80 flex">
-                    <Link className="hover:underline" href="/projects">projects</Link>
-                    <Link className="hover:underline" href="https://github.com/nominori-dev">github</Link>
-                    <Link className="hover:underline" href="https://www.linkedin.com/in/nominori/">linkedin</Link>
+        <header className="z-10 py-12 px-2 flex flex-row justify-between items-center max-w-[90%] mx-auto">
+            <div className="flex flex-col gap-2 max-w-6xl">
+                <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
+                    <span className="chrome-text">Antonii Shymchyts</span>
+                </h1>
+                <Link
+                    className="font-mono text-xs uppercase tracking-wider opacity-70 hover:opacity-100 hover:underline w-fit"
+                    href="mailto:nominori999@gmail.com"
+                >
+                    nominori999@gmail.com
+                </Link>
+                <nav className="flex gap-3 mt-1 font-mono text-xs uppercase tracking-wider">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            className="opacity-70 hover:opacity-100 hover:underline"
+                            href={link.href}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                    {/* Reserved for the locale switcher introduced in milestone 3. */}
+                    <span data-slot="locale-switcher" />
                 </nav>
             </div>
-            <div>
-                <div>
-                    <Image src={"/qr-code.png"} alt={"qr-code"} width={"150"} height={"150"}/>
-                </div>
-            </div>
+            <Image src="/qr-code.png" alt="qr-code" width={150} height={150} />
         </header>
-    )
-}
+    );
+};
