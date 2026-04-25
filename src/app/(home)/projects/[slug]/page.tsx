@@ -7,8 +7,6 @@ import { getAllProjects, getProjectBySlug } from "../lib/projects";
 
 type Params = { slug: string };
 
-export const dynamicParams = false;
-
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
