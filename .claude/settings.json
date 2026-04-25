@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(curl -s -o /tmp/me-projects.html -w \"status=%{http_code}\\\\nbytes=%{size_download}\\\\n\" http://localhost:3000/projects)",
+      "Bash(curl -s -o /tmp/me-detail.html -w \"status=%{http_code}\\\\nbytes=%{size_download}\\\\n\" http://localhost:3000/projects/portfolio-site)",
+      "Bash(curl -s -o /tmp/me-404.html -w \"status=%{http_code}\\\\nbytes=%{size_download}\\\\n\" http://localhost:3000/projects/nope)",
+      "Bash(curl -s -o /tmp/me-sitemap.xml -w \"status=%{http_code}\\\\nbytes=%{size_download}\\\\n\" http://localhost:3000/sitemap.xml)",
+      "Bash(curl -s -o /tmp/me-robots.txt -w \"status=%{http_code}\\\\nbytes=%{size_download}\\\\n\" http://localhost:3000/robots.txt)",
+      "Bash(curl -s -o /tmp/me-404.html -w \"status=%{http_code}\\\\n\" http://localhost:3000/projects/nope)"
+    ],
+    "additionalDirectories": [
+      "/Users/antoniishymchyts/projects/me/src/app/(home)/projects",
+      "/tmp"
+    ]
+  }
+}
