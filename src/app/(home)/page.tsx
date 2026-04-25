@@ -1,4 +1,23 @@
+import { Badge } from "@/components/ui/badge";
 import { FeaturedProjects } from "./sections/featured-projects";
+
+const TECH_STACK = [
+    "Java",
+    "Spring Boot",
+    "Quarkus",
+    "Next.js",
+    "React",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
+    "Elastic Search",
+    "Docker",
+    "Kafka",
+    "RabbitMQ",
+    "Wordpress",
+    "Python",
+    "TypeScript",
+];
 
 export default function Home() {
   return (
@@ -10,33 +29,23 @@ export default function Home() {
               </div>
 
               <div className="space-y-4">
-                  <div className="rounded-lg border border-black/6 p-4">
+                  <div className="bevel rounded-lg border border-border/60 p-4">
                       <div className="flex items-center justify-between">
                           <div>
-                              <div className="text-sm">E-mail</div>
+                              <div className="text-sm font-mono uppercase tracking-wider opacity-70">E-mail</div>
                               <div className="font-light text-sm">nominori999@gmail.com</div>
                           </div>
                       </div>
                   </div>
 
-                  <div className="rounded-lg border border-black/6 p-4">
-                      <div className="text-sm">Tech Stack</div>
+                  <div className="bevel rounded-lg border border-border/60 p-4">
+                      <div className="text-sm font-mono uppercase tracking-wider opacity-70">Tech Stack</div>
                       <div className="flex flex-wrap gap-2 mt-2">
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Java</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Spring Boot</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Quarkus</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Next.js</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">React</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">MySQL</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">PostgreSQL</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">MongoDB</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Elastic Search</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Docker</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Kafka</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">RabbitMQ</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Wordpress</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">Python</span>
-                          <span className="px-2 py-1 rounded bg-black/3 text-xs">TypeScript</span>
+                          {TECH_STACK.map((tech) => (
+                              <Badge key={tech} variant="chrome">
+                                  {tech}
+                              </Badge>
+                          ))}
                       </div>
                   </div>
               </div>

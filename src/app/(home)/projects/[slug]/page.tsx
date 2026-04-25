@@ -67,7 +67,7 @@ export default async function ProjectPage({
                     <p className="opacity-80 text-lg">{project.summary}</p>
                     <div className="flex flex-wrap gap-2">
                         {project.tech.map((t) => (
-                            <Badge key={t} variant="secondary">
+                            <Badge key={t} variant="chrome">
                                 {t}
                             </Badge>
                         ))}

@@ -27,7 +27,7 @@ export const ProjectCard = ({ project }: { project: Project }) => (
             <CardContent className="flex flex-col gap-3">
                 <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
-                        <Badge key={t} variant="secondary">
+                        <Badge key={t} variant="chrome">
                             {t}
                         </Badge>
                     ))}
