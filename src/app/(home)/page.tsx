@@ -1,3 +1,5 @@
+import { FeaturedProjects } from "./sections/featured-projects";
+
 export default function Home() {
   return (
       <main>
@@ -39,6 +41,8 @@ export default function Home() {
                   </div>
               </div>
           </section>
+
+          <FeaturedProjects />
       </main>
   );
 }

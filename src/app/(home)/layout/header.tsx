@@ -14,6 +14,7 @@ export const Header = () => {
                     <Link className="hover:underline" href="mailto:nominori999@gmail.com">nominori999@gmail.com</Link>
                 </nav>
                 <nav className="space-x-2 opacity-80 flex">
+                    <Link className="hover:underline" href="/projects">projects</Link>
                     <Link className="hover:underline" href="https://github.com/nominori-dev">github</Link>
                     <Link className="hover:underline" href="https://www.linkedin.com/in/nominori/">linkedin</Link>
                 </nav>
