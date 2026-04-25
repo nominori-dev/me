@@ -19,7 +19,11 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        brutal: "border-2 border-black uppercase bg-white text-black transition duration-200 text-sm shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(0,0,0)]"
+        brutal: "border-2 border-black uppercase bg-white text-black transition duration-200 text-sm shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(0,0,0)]",
+        chrome:
+          "chrome bevel font-mono uppercase tracking-wider text-foreground border border-border/60 hover:brightness-110 active:brightness-95",
+        y2k:
+          "holo bevel font-mono uppercase tracking-wider text-white shadow-md hover:[background-position:100%_100%] [transition:background-position_400ms_ease,filter_200ms_ease] active:brightness-95",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
