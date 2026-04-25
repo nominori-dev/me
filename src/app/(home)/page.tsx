@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { FeaturedProjects } from "./sections/featured-projects";
+import { HeroSection } from "./sections/hero-section";
 
 const TECH_STACK = [
     "Java",
@@ -22,7 +23,11 @@ const TECH_STACK = [
 export default function Home() {
   return (
       <main>
-          <section id="about" className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-[90%] mx-auto">
+          <div className="max-w-[90%] mx-auto">
+              <HeroSection />
+          </div>
+
+          <section id="about" className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-[90%] mx-auto mt-16">
               <div>
                   <h2 className="text-2xl mb-4">About me</h2>
                   <p className="opacity-80">My expertise lies in <span className="font-semibold">Java backend development</span> (Spring Boot, APIs, system integration) and <span className="font-semibold">Next.js</span> for frontend, where I build fast, SEO-friendly, and modern web experiences.</p>
