@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/(home)/globals.css";
 import {ThemeProvider} from "@/components/theme-provider";
-import { Roboto, Geist_Mono } from 'next/font/google'
-
-const roboto = Roboto({
-    subsets: ['latin'],
-    weight: ['400', '500', '700'],
-    variable: '--font-roboto',
-})
-
-const geistMono = Geist_Mono({
-    subsets: ['latin'],
-    variable: '--font-geist-mono',
-})
 
 export const metadata: Metadata = {
     title: "nominori-dev | Portfolio",
@@ -67,9 +55,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${roboto.variable} ${geistMono.variable} font-sans antialiased max-w-[1440px] mx-auto`}
+        className="font-sans antialiased"
       >
-        <ThemeProvider attribute={"class"} defaultTheme={"light"} enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute={"class"} defaultTheme={"system"} enableSystem disableTransitionOnChange>
             {children}
         </ThemeProvider>
       </body>

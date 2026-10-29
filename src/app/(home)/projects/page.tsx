@@ -22,9 +22,9 @@ export default async function ProjectsPage() {
     const projects = await getAllProjects();
 
     return (
-        <main className="max-w-[90%] mx-auto py-10">
+        <main id="main-content" className="content-column mx-auto page-content">
             <header className="mb-10 space-y-3">
-                <h2 className="text-3xl md:text-4xl font-semibold">Projects</h2>
+                <h1 className="page-title">Projects</h1>
                 <p className="opacity-70 max-w-2xl">
                     A curated selection of things I&apos;ve built — backend services,
                     full-stack web apps, and the occasional experiment.

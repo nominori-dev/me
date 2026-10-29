@@ -53,7 +53,7 @@ export default async function ProjectPage({
     if (!project) notFound();
 
     return (
-        <main className="max-w-[90%] mx-auto py-10">
+        <main id="main-content" className="content-column mx-auto page-content">
             <Link
                 href="/projects"
                 className="text-sm opacity-70 hover:opacity-100 hover:underline"
@@ -63,7 +63,7 @@ export default async function ProjectPage({
 
             <article className="mt-6 max-w-3xl">
                 <header className="space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-semibold">{project.title}</h2>
+                    <h1 className="page-title">{project.title}</h1>
                     <p className="opacity-80 text-lg">{project.summary}</p>
                     <div className="flex flex-wrap gap-2">
                         {project.tech.map((t) => (

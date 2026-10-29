@@ -1,62 +1,23 @@
-import { Badge } from "@/components/ui/badge";
 import { FeaturedProjects } from "./sections/featured-projects";
 import { HeroSection } from "./sections/hero-section";
+import { ParticleMorph } from "./components/particle-morph";
 
-const TECH_STACK = [
-    "Java",
-    "Spring Boot",
-    "Quarkus",
-    "Next.js",
-    "React",
-    "MySQL",
-    "PostgreSQL",
-    "MongoDB",
-    "Elastic Search",
-    "Docker",
-    "Kafka",
-    "RabbitMQ",
-    "Wordpress",
-    "Python",
-    "TypeScript",
-];
+const TECH_STACK = ["Java", "Spring Boot", "Quarkus", "Next.js", "React", "MySQL", "PostgreSQL", "MongoDB", "Elastic Search", "Docker", "Kafka", "RabbitMQ", "Wordpress", "Python", "TypeScript"];
 
 export default function Home() {
-  return (
-      <main>
-          <div className="max-w-[90%] mx-auto">
-              <HeroSection />
-          </div>
-
-          <section id="about" className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-[90%] mx-auto mt-16">
-              <div>
-                  <h2 className="text-2xl mb-4">About me</h2>
-                  <p className="opacity-80">My expertise lies in <span className="font-semibold">Java backend development</span> (Spring Boot, APIs, system integration) and <span className="font-semibold">Next.js</span> for frontend, where I build fast, SEO-friendly, and modern web experiences.</p>
-              </div>
-
-              <div className="space-y-4">
-                  <div className="bevel rounded-lg border border-border/60 p-4">
-                      <div className="flex items-center justify-between">
-                          <div>
-                              <div className="text-sm font-mono uppercase tracking-wider opacity-70">E-mail</div>
-                              <div className="font-light text-sm">nominori999@gmail.com</div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div className="bevel rounded-lg border border-border/60 p-4">
-                      <div className="text-sm font-mono uppercase tracking-wider opacity-70">Tech Stack</div>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                          {TECH_STACK.map((tech) => (
-                              <Badge key={tech} variant="chrome">
-                                  {tech}
-                              </Badge>
-                          ))}
-                      </div>
-                  </div>
-              </div>
-          </section>
-
-          <FeaturedProjects />
-      </main>
-  );
+    return (
+        <main id="main-content" className="portfolio-main">
+            <HeroSection />
+            <section id="about" className="about-section">
+                <div className="section-label"><span>ABOUT</span></div>
+                <div className="about-grid">
+                    <h2>Making complex<br />things <em>feel simple.</em></h2>
+                    <ParticleMorph />
+                </div>
+                <div className="about-copy about-copy-below"><p>My expertise lies in Java backend development — Spring Boot, APIs, and system integration — and Next.js for the frontend.</p><p>I enjoy building fast, dependable systems and modern web experiences with care for both the architecture and the details.</p><a href="mailto:nominori999@gmail.com" className="inline-link">GET IN TOUCH <span>↗</span></a></div>
+                <div className="stack-row"><span className="stack-label">TOOLS OF THE TRADE<br /><small>THE TECH STACK / 01—15</small></span><div className="stack-list">{TECH_STACK.map((tech) => <span key={tech}>{tech}</span>)}</div></div>
+            </section>
+            <FeaturedProjects />
+        </main>
+    );
 }

@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function ProjectNotFound() {
     return (
-        <main className="max-w-[90%] mx-auto py-20 text-center space-y-4">
-            <h2 className="text-3xl font-semibold">Project not found</h2>
+        <main id="main-content" className="content-column mx-auto py-20 text-center space-y-4">
+            <h1 className="page-title">Project not found</h1>
             <p className="opacity-70">
                 That project doesn&apos;t exist (yet).
             </p>
