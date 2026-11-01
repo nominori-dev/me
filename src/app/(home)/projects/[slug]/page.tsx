@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
+import { CaseVisual } from "../components/case-visual";
 import { Mdx } from "../components/mdx";
 import { getAllProjects, getProjectBySlug } from "../lib/projects";
 
 type Params = { slug: string };
-
-const dateFormatter = new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-});
 
 export const generateStaticParams = async (): Promise<Params[]> => {
     const projects = await getAllProjects();
@@ -52,56 +46,16 @@ export default async function ProjectPage({
     const project = await getProjectBySlug(slug);
     if (!project) notFound();
 
+    const headings = [...project.content.matchAll(/^## (.+)$/gm)].map((match) => ({ title: match[1], id: match[1].toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, "-") }));
     return (
-        <main id="main-content" className="content-column mx-auto page-content">
-            <Link
-                href="/projects"
-                className="text-sm opacity-70 hover:opacity-100 hover:underline"
-            >
-                ← All projects
-            </Link>
-
-            <article className="mt-6 max-w-3xl">
-                <header className="space-y-4">
-                    <h1 className="page-title">{project.title}</h1>
-                    <p className="opacity-80 text-lg">{project.summary}</p>
-                    <div className="flex flex-wrap gap-2">
-                        {project.tech.map((t) => (
-                            <Badge key={t} variant="chrome">
-                                {t}
-                            </Badge>
-                        ))}
-                    </div>
-                    <div className="flex flex-wrap gap-4 text-sm opacity-70">
-                        <time dateTime={project.publishedAt.toISOString()}>
-                            {dateFormatter.format(project.publishedAt)}
-                        </time>
-                        {project.repo && (
-                            <a
-                                href={project.repo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:underline"
-                            >
-                                Repository ↗
-                            </a>
-                        )}
-                        {project.url && (
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:underline"
-                            >
-                                Live ↗
-                            </a>
-                        )}
-                    </div>
+        <main id="main-content" className="content-column mx-auto page-content case-page">
+            <Link href="/projects" className="case-back">← All projects</Link>
+            <article>
+                <header className="case-hero">
+                    <div><p className="case-kicker">CASE STUDY / {project.status && `${project.status.toUpperCase()} / `}{project.private ? "PRIVATE ACCESS" : "PUBLIC REPOSITORY"}</p><h1 className="page-title">{project.title}</h1><p className="case-intro">{project.summary}</p><div className="case-meta">{project.tech.map((t) => <span key={t}>{t}</span>)}</div>{project.repo && <a className="case-repo" href={project.repo} target="_blank" rel="noopener noreferrer">View repository ↗</a>}</div>
+                    <div className="case-hero-art"><CaseVisual variant={project.visual} project={project.slug} /></div>
                 </header>
-
-                <div className="mdx-content mt-10">
-                    <Mdx source={project.content} />
-                </div>
+                <div className="case-layout"><nav aria-label="On this page" className="case-nav"><span>IN THIS CASE</span>{headings.map((heading, i) => <a key={heading.id} href={`#${heading.id}`}><span>{String(i + 1).padStart(2, "0")} &nbsp; {heading.title}</span><span>↗</span></a>)}</nav><div className="case-article mdx-content"><Mdx source={project.content} /></div></div>
             </article>
         </main>
     );

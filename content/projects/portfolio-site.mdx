@@ -1,23 +1,21 @@
 ---
 title: "Portfolio site"
-summary: "This very site — a Next.js 15 App Router portfolio with locally-stored MDX content."
-tech: ["Next.js", "React", "TypeScript", "Tailwind v4", "shadcn/ui", "MDX"]
+summary: "A personal portfolio built around a lightweight, maintainable publishing workflow."
+tech: ["Next.js", "TypeScript", "MDX"]
 repo: "https://github.com/nominori-dev/me"
-url: "https://me-snowy-zeta-34.vercel.app"
-featured: true
-publishedAt: "2026-04-25"
+visual: "orbit"
+featured: false
+publishedAt: "2026-04-20"
 ---
 
 ## Overview
 
-A single-page personal portfolio built on Next.js 15 with the App Router, React 19, and TypeScript in strict mode. Content lives as MDX files committed to the repo, so there's no CMS or database to operate.
+This portfolio brings together selected work, a concise introduction and project case studies in a single Next.js application.
 
-## Highlights
+## Approach
 
-- **Vertical-slice routing** — each domain (e.g. `/projects`) co-locates its route, sections, and helpers.
-- **Tailwind v4 inline theme** — design tokens declared in `globals.css`, no `tailwind.config`.
-- **Build-time content** — MDX is read and validated with Zod at build, so a malformed frontmatter fails CI rather than production.
+Project content lives in local MDX files and is validated with Zod. This keeps publishing straightforward without adding a database or a separate content management system.
 
-## What's next
+## Stack
 
-See the project roadmap for the upcoming Y2K UI refresh and English/Polish localization milestones.
+Next.js, React, TypeScript, MDX and Three.js.

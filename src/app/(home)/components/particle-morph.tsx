@@ -50,7 +50,7 @@ export function ParticleMorph() {
         container.appendChild(renderer.domElement);
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(36, 1, .1, 20);
-        camera.position.set(0, 0, 4.8);
+        camera.position.set(0, 0, 3.8);
         const group = new THREE.Group();
         scene.add(group);
         const forms = makeForms();
@@ -97,8 +97,8 @@ export function ParticleMorph() {
                 group.rotation.y = reduced ? .4 : seconds * .11;
                 group.rotation.x = .18 + (reduced ? 0 : Math.sin(seconds * .18) * .12);
                 const dark = document.documentElement.classList.contains("dark");
-                material.color.set(dark ? 0xa4d8e8 : 0x345f70);
-                ringMaterial.color.set(dark ? 0x94c6d7 : 0x345f70);
+                material.color.set(dark ? 0xf08bc2 : 0xb42f72);
+                ringMaterial.color.set(dark ? 0xc395e8 : 0x9b60aa);
                 renderer.render(scene, camera);
             }
             frame = requestAnimationFrame(draw);

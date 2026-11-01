@@ -8,6 +8,9 @@ export const projectFrontmatterSchema = z.object({
     repo: z.url().optional(),
     url: z.url().optional(),
     featured: z.boolean().default(false),
+    private: z.boolean().default(false),
+    status: z.string().optional(),
+    visual: z.enum(["orbit", "layers", "grid", "signal"]).default("orbit"),
     publishedAt: z.coerce.date(),
 });
 
